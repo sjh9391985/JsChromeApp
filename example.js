@@ -62,9 +62,46 @@ var1("nice to meet you")
 3. String
 4. undefined -> [var u = undefined == var u 와 같은 의미]/ 선언과 정의가 구분이 없음.
 
+// [객체] new 생성자함수() 사용해서 생성 - (1. object type)/ (2. function type)
+Number()
+Boolean()
+String()
+
+var i1 = new Number(10);
+var i2 = new Boolean(true);
+var i3 = new String("Hello Wordl");
+
+console.log(typeof(i1)) -> 생성자 함수를 통해서 만들어진것은 object 타입으로 나옴 
+console.log(typeof(i2)) -> 생성자 함수를 통해서 만들어진것은 object 타입으로 나옴 
+console.log(typeof(i3)) -> 생성자 함수를 통해서 만들어진것은 object 타입으로 나옴 
+// null 도 object로 나옴.
+
+var o = {} //객체는 object type
+var a = [] //배열은 object type
+JSON - 객체의 literal {} - js의 object를 표현하는 방법
 
 
-// [객체]
+// 자바 스크립트 객체를 구분하는 떠 다른 방법
+6-1)
+내장 객체(Built-In, Native), 자바스크립트 엔진 안에 미리 내장되어 있는 객체
+ - Number, Boolean, Date RegExp ... 생성자 함수 객체
+ - parseInt, setTimeout, setInterval 와 같은 일반 함수 객체
+ - window 객체(브라우저에서만... 전역객체)
+
+ 6-2)
+ 호스트 객체, 자바스크립트 엔진이 임베디드된 호스트의 객체
+ 브자우저만 해당(document, location, XMLHttpRequest, ...)
+
+ 6-3)
+ 사용자 객체. 자바스크립트 코드가 엔진에서 실행되면서 생성되는 객체들.
+ 
+
+
+
+
+
+
+
 
 
 
