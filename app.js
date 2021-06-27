@@ -14,6 +14,8 @@
 //console.log(title);
 
 /* -> listener 사용법
+const h1 = document.querySelector("div.hello:first-child h1");
+
 const title = document.querySelector("div.hello:first-child h1");
                       //-> 여러개의 쿼리(배열형식)를 가져오고 싶다면 querySelectorAll()을 사용할것.
 
@@ -36,9 +38,6 @@ title.addEventListener("mouseenter", handleMouseEnter);
 title.addEventListener("mouseleave", handleMouseLeave);
 window.addEventListener("resize", handleWindowResize);
 */
-
-
-const h1 = document.querySelector("div.hello:first-child h1");
 // Javascript에서는 css처리를 하는것이 효율적이지는 않다.
 /*function handleTitleClick() {
     if(h1.style.color === "blue"){
@@ -62,7 +61,15 @@ h1.addEventListener("click",handleTitleClick);*/
 h1.addEventListener("click", handleTitleClick);*/
 
 // toggle 사용하기
-function handleTitleClick() {
+/*function handleTitleClick() {
     h1.classList.toggle("active"); // h1 태크의 classlist에서 active 클래스가 있는지 확인하고 있다면 제거, 없다면 생성을 해주는 역할을 하는 함수.
 }
-h1.addEventListener("click", handleTitleClick);
+h1.addEventListener("click", handleTitleClick);*/
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+
+function onLoginSubmit(event) {
+  event.preventDefault();
+  console.log(loginInput.value);
+}
+loginForm.addEventListener("submit", onLoginSubmit);
