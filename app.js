@@ -67,9 +67,30 @@ h1.addEventListener("click", handleTitleClick);*/
 h1.addEventListener("click", handleTitleClick);*/
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username"
 
 function onLoginSubmit(event) {
-  event.preventDefault();
-  console.log(loginInput.value);
+    event.preventDefault(); //브라우저가 submit할때의 기본동작을 하지 않게 해줌
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    //greeting.innerText = "Hello " + username; 아래와 같은 의미.
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME); 
 }
-loginForm.addEventListener("submit", onLoginSubmit);
+
+function paintGreetings(username){
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+if(savedUsername === null ){
+    // show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else{
+   paintGreetings(savedUsername);
+}

@@ -3,15 +3,25 @@
 <head>
   <title>Momentum App<!-- JS 코드에서 가져옴 --></title>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-  <form id="login-form">
-  <input required maxlength="15"
-  type="text" placeholder="What is your name?"/>
-  <input type="submit" value="Log In">
+  <h2 id="clock"> 00:00:00 </h2>
+
+  <form class="hidden" id="login-form">
+    <input
+      required
+      maxlength="15"
+      type="text"
+      placeholder="What is your name?"
+    />
+    <input type="submit" value="Log In" />
   </form>
-  <a href="https://nomadcoders.co">Go to courses</a>
-  <script src="app.js"></script>
+  <h1 class="hidden" id="greeting"></h1>
+
+
+
+  <script src="JS/clock.js"></script>  
+  <script src="JS/greetings.js"></script>
 </body>
 </html>
